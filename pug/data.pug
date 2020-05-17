@@ -1,0 +1,26 @@
+extends base.pug
+
+block isi
+  .app
+    p Contoh teks: {{ text }}
+    p Contoh bilangan bulat: {{ angka1 }}
+    p Contoh bilangan titik kambang: {{ angka2 }}
+    p Contoh pilihan benar: {{ pilihan1 }}
+    p Contoh pilihan salah: {{ pilihan2 }}
+    p Contoh array: {{ array }}
+    
+block js
+  :uglify-js:coffee-script(bare=true)
+    app = new Vue
+      el: ".app"
+      data:
+        text: "halo ini teks"
+        angka1: 100
+        angka2: 10.3
+        pilihan1: true
+        pilihan2: false
+        array: [
+          "satu"
+          "dua"
+          "tiga"
+        ]

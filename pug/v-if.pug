@@ -1,0 +1,13 @@
+extends base.pug
+
+block isi
+  .app
+    b(v-if="tampil") {{ pesan }}
+    
+block js
+  :uglify-js:coffee-script(bare=true)
+    app = new Vue
+      el: ".app"
+      data:
+        tampil: true
+        pesan: "belajar conditional"

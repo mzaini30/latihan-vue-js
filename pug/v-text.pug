@@ -1,0 +1,12 @@
+extends base.pug
+
+block isi
+  .app
+    div(v-text="pesan")
+    
+block js
+  :uglify-js:coffee-script(bare=true)
+    app = new Vue
+      el: ".app"
+      data:
+        pesan: "hello vue!"
